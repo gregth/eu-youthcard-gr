@@ -62,8 +62,6 @@ for offer in all_offers:
             print("%s : %s" % (label_eng, text))
         offer_structured_info[label_eng] = text
     all_offers_structured.append(offer_structured_info)
-    if len(all_offers_structured) > 3:
-        break
 
     # Sleep to avoid DOS
     time.sleep(5)
