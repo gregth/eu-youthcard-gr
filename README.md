@@ -20,5 +20,5 @@ a intuitive and user-friendly UI.
     ```
 3. Execute the script:
     ```
-    $ python scapper.py
+    $ python scraper.py
     ```
