@@ -42,7 +42,13 @@ for offer in all_offers:
 
     offer_structured_info = {}
     for offer_info_piece in offer_info:
-        label = offer_info_piece.find("strong").getText()
+        try:
+            label = offer_info_piece.find("strong").getText()
+        except AttributeError:
+            print("[WARNING] Invalid format. No label found in:")
+            print(offer_info_piece)
+            continue
+
         # Labels might contain trailing whiterspace after colon,
         # remove it along with the colon
         label_clean = label.split(":")[0]
