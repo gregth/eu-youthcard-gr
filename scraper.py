@@ -55,12 +55,12 @@ for offer in all_offers:
             continue
 
         # Retrieve the offer info for the label
-        if label_eng == "descr":
-            text = offer_info_piece.encode_contents()
+        text = offer_info_piece.getText().split(":")[1].strip()
+        if label_eng == "discount_desc":
+            print("%s : %s" % (label_eng, text[0:100] + "..."))
         else:
-            text = offer_info_piece.getText().split(":")[1].strip()
+            print("%s : %s" % (label_eng, text))
         offer_structured_info[label_eng] = text
-        print("%s : %s" % (label_eng, text[0:100] + "..."))
     all_offers_structured.append(offer_structured_info)
     if len(all_offers_structured) > 3:
         break
